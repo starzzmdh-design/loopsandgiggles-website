@@ -112,7 +112,7 @@
       <a href="https://www.facebook.com/profile.php?id=61578956507946" target="_blank" rel="noopener">Facebook</a>
     </div>
 
-    <form class="contact-form" action="https://formspree.io/f/mojooayb" method="POST">
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/mojooayb" method="POST">
       <input type="hidden" name="_subject" value="New inquiry from the Loops and Giggles website">
       <div>
         <label for="name">Name</label>
@@ -128,6 +128,8 @@
       </div>
       <button type="submit">Send Message</button>
     </form>
+    <p id="contact-form-success" style="display:none; text-align:center; margin-top: 1.5rem; color: var(--accent); font-weight: 500;">Thanks! Your message has been sent &mdash; we'll get back to you soon.</p>
+    <p id="contact-form-error" style="display:none; text-align:center; margin-top: 1.5rem; color: #b00020;">Something went wrong. Please try again, or email us directly.</p>
   </div>
 </section>
 
@@ -138,5 +140,36 @@
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const successMsg = document.getElementById('contact-form-success');
+    const errorMsg = document.getElementById('contact-form-error');
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      submitBtn.disabled = false;
+      if (response.ok) {
+        contactForm.reset();
+        contactForm.style.display = 'none';
+        successMsg.style.display = 'block';
+      } else {
+        errorMsg.style.display = 'block';
+      }
+    }).catch(function () {
+      submitBtn.disabled = false;
+      errorMsg.style.display = 'block';
+    });
+  });
+}
+</script>
 </body>
 </html>
