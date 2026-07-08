@@ -273,6 +273,53 @@ section h2 {
 }
 .social-links a:hover { border-color: var(--accent); color: var(--accent); }
 
+.contact-form {
+  max-width: 480px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  text-align: left;
+}
+
+.contact-form label {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--ink);
+}
+
+.contact-form textarea { min-height: 120px; resize: vertical; }
+
+.contact-form button {
+  align-self: center;
+  margin-top: 0.25rem;
+  padding: 0.85rem 2.2rem;
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+.contact-form button:hover { background: var(--accent); }
+
 footer {
   border-top: 1px solid var(--border);
   padding: 1.75rem 0;
