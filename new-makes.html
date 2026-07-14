@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Makes | Loops and Giggles</title>
+<meta name="description" content="Fresh off the hook &mdash; the newest handcrafted crochet plushies from Loops and Giggles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="logo.svg" alt="Loops and Giggles">
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="new-makes.html">New Makes</a>
+      <a href="index.html#fairs">Find Us</a>
+      <a href="index.html#connect">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-title">
+  <h1>New makes</h1>
+  <p>Here's what I've been working on lately &mdash; see you at the next show!</p>
+</div>
+
+<section class="featured">
+  <div class="wrap">
+    <div class="carousel" id="carousel">
+      <div class="carousel-slide is-active">
+        <img src="ruby-red-cardinal.jpg" alt="Ruby Red the Cardinal plushie">
+        <h3>Ruby Red the Cardinal</h3>
+      </div>
+      <div class="carousel-slide">
+        <img src="clover-highland-cow.jpg" alt="Clover the Highland Cow plushie">
+        <h3>Clover the Highland Cow</h3>
+      </div>
+      <div class="carousel-slide">
+        <img src="midnight-bear-cub.jpg" alt="Midnight the Bear Cub plushie">
+        <h3>Midnight the Bear Cub</h3>
+      </div>
+      <div class="carousel-slide">
+        <img src="chip-penguin.jpg" alt="Chip the Penguin plushie">
+        <h3>Chip the Penguin</h3>
+      </div>
+      <div class="carousel-slide">
+        <img src="rosie-ribbon-bunny.jpg" alt="Rosie Ribbon the Bunny plushie">
+        <h3>Rosie Ribbon the Bunny</h3>
+      </div>
+      <div class="carousel-slide">
+        <img src="hoppy-pond-frog.jpg" alt="Hoppy the Pond Frog plushie">
+        <h3>Hoppy the Pond Frog</h3>
+      </div>
+      <div class="carousel-slide">
+        <img src="finn-seal-pup.jpg" alt="Finn the Seal Pup plushie">
+        <h3>Finn the Seal Pup</h3>
+      </div>
+      <div class="carousel-slide">
+        <img src="lilac-kitty.jpg" alt="Lilac the Kitty plushie">
+        <h3>Lilac the Kitty</h3>
+      </div>
+      <div class="carousel-slide">
+        <img src="mossy-turtle.jpg" alt="Mossy the Turtle plushie">
+        <h3>Mossy the Turtle</h3>
+      </div>
+      <div class="carousel-slide">
+        <img src="marley-sloth.jpg" alt="Marley the Sloth plushie">
+        <h3>Marley the Sloth</h3>
+      </div>
+      <div class="carousel-slide">
+        <img src="sunny-duckling.jpg" alt="Sunny the Duckling plushie">
+        <h3>Sunny the Duckling</h3>
+      </div>
+    </div>
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="year"></span> Loops and Giggles. All plushies handmade with love.
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+const slides = document.querySelectorAll('#carousel .carousel-slide');
+const dotsWrap = document.getElementById('carousel-dots');
+let current = 0;
+let timer;
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  if (i === 0) dot.classList.add('is-active');
+  dot.setAttribute('aria-label', 'Show plushie ' + (i + 1));
+  dot.addEventListener('click', () => { goTo(i); resetTimer(); });
+  dotsWrap.appendChild(dot);
+});
+const dots = dotsWrap.querySelectorAll('button');
+
+function goTo(index) {
+  slides[current].classList.remove('is-active');
+  dots[current].classList.remove('is-active');
+  current = index;
+  slides[current].classList.add('is-active');
+  dots[current].classList.add('is-active');
+}
+
+function next() { goTo((current + 1) % slides.length); }
+
+function resetTimer() {
+  clearInterval(timer);
+  timer = setInterval(next, 3000);
+}
+
+resetTimer();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ebed4bbeed543a4a040f921b65e6b70"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
