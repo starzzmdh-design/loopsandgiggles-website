@@ -273,6 +273,20 @@ section h2 {
 }
 .social-links a:hover { border-color: var(--accent); color: var(--accent); }
 
+.social-embed {
+  margin: 3rem auto 0;
+  max-width: 795px;
+}
+
+.social-embed-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.75rem;
+  text-align: left;
+}
+
 .contact-form {
   max-width: 480px;
   margin: 2rem auto 0;
