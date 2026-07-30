@@ -231,10 +231,10 @@ section h2 {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   padding: 1.1rem 0.25rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.25rem 1.5rem;
 }
 
 .fair-list .fair-name { font-weight: 500; }
@@ -247,7 +247,22 @@ section h2 {
   color: var(--accent);
   text-decoration-color: var(--accent);
 }
-.fair-list .fair-date { color: var(--ink-soft); font-size: 0.9rem; }
+.fair-list .fair-date {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+  .fair-list li {
+    grid-template-columns: 1fr;
+  }
+  .fair-list .fair-date {
+    text-align: left;
+    white-space: normal;
+  }
+}
 
 .social-section {
   text-align: center;
