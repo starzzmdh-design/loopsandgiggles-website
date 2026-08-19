@@ -236,53 +236,103 @@ section h2 {
   border-radius: var(--radius);
 }
 
-.fair-list {
+.fair-month {
+  max-width: 560px;
+  margin: 2rem auto 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.fair-month:first-of-type { margin-top: 0; }
+
+.fair-cal {
   list-style: none;
   padding: 0;
   margin: 0 auto;
   max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.fair-list li {
+.fair-card {
+  display: flex;
+  gap: 1rem;
   background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  padding: 1.1rem 0.25rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: baseline;
-  gap: 0.25rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
 }
 
-.fair-list .fair-name { font-weight: 500; }
-.fair-list .fair-name a {
+.fair-badge {
+  flex: 0 0 auto;
+  width: 84px;
+  text-align: center;
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.4rem;
+}
+.fair-weekday {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.fair-day {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.fair-hours {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.fair-info { flex: 1 1 auto; }
+.fair-host {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.fair-title {
+  margin: 0.1rem 0 0.35rem;
+  font-weight: 600;
+}
+.fair-title a {
+  color: var(--ink);
   text-decoration: underline;
   text-decoration-color: var(--border);
   text-underline-offset: 3px;
 }
-.fair-list .fair-name a:hover {
+.fair-title a:hover {
   color: var(--accent);
   text-decoration-color: var(--accent);
 }
-.fair-list .fair-date {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  text-align: right;
-  white-space: nowrap;
-}
-
-.fair-list .fair-address {
-  grid-column: 1 / -1;
-  color: var(--ink-soft);
+.fair-addr {
+  margin: 0;
   font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.fair-note {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-style: italic;
 }
 
-@media (max-width: 500px) {
-  .fair-list li {
-    grid-template-columns: 1fr;
-  }
-  .fair-list .fair-date {
-    text-align: left;
-    white-space: normal;
+@media (max-width: 480px) {
+  .fair-badge { width: 64px; }
+  .fair-day { font-size: 1.4rem; }
+  .fair-hours {
+    font-size: 0.6rem;
   }
 }
 
