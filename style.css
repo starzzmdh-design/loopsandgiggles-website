@@ -236,6 +236,7 @@ section h2 {
   align-items: center;
   justify-content: center;
 }
+.lightbox[hidden] { display: none; }
 
 .lightbox-img {
   max-width: min(90vw, 640px);
