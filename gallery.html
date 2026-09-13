@@ -201,9 +201,13 @@
         <img src="pippa-puff-penguin.jpg" alt="Pippa Puff Penguin plushie">
         <div class="product-info"><h3>Pippa Puff Penguin</h3></div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-photos="rexy-trex.jpg,rexy-trex-2.jpg,rexy-trex-3.jpg">
         <img src="rexy-trex.jpg" alt="Rexy the T-Rex plushie">
-        <div class="product-info"><h3>Rexy the T-Rex</h3></div>
+        <div class="product-info">
+          <h3>Rexy the T-Rex</h3>
+          <p class="product-price">$40</p>
+          <a class="btn-buy" href="https://square.link/u/cWhehc4X" target="_blank" rel="noopener">Buy Now</a>
+        </div>
       </div>
       <div class="product-card">
         <img src="rosie-ribbon-bunny.jpg" alt="Rosie Ribbon the Bunny plushie">
@@ -232,7 +236,64 @@
   </div>
 </footer>
 
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&lsaquo;</button>
+  <img class="lightbox-img" id="lightbox-img" alt="">
+  <button class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="Next photo">&rsaquo;</button>
+  <p class="lightbox-count" id="lightbox-count"></p>
+</div>
+
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+(function () {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCount = document.getElementById('lightbox-count');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const closeBtn = document.getElementById('lightbox-close');
+  let photos = [];
+  let index = 0;
+
+  function show() {
+    lightboxImg.src = photos[index];
+    const multi = photos.length > 1;
+    prevBtn.hidden = !multi;
+    nextBtn.hidden = !multi;
+    lightboxCount.hidden = !multi;
+    if (multi) lightboxCount.textContent = (index + 1) + ' / ' + photos.length;
+  }
+
+  function open(card) {
+    const list = card.dataset.photos;
+    photos = list ? list.split(',') : [card.querySelector('img').getAttribute('src')];
+    index = 0;
+    lightboxImg.alt = card.querySelector('img').alt;
+    show();
+    lightbox.hidden = false;
+  }
+
+  document.querySelectorAll('.product-card').forEach(function (card) {
+    const img = card.querySelector('img');
+    if (img) {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function () { open(card); });
+    }
+  });
+
+  prevBtn.addEventListener('click', function () { index = (index - 1 + photos.length) % photos.length; show(); });
+  nextBtn.addEventListener('click', function () { index = (index + 1) % photos.length; show(); });
+  closeBtn.addEventListener('click', function () { lightbox.hidden = true; });
+  lightbox.addEventListener('click', function (e) { if (e.target === lightbox) lightbox.hidden = true; });
+  document.addEventListener('keydown', function (e) {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape') lightbox.hidden = true;
+    if (e.key === 'ArrowLeft') prevBtn.click();
+    if (e.key === 'ArrowRight') nextBtn.click();
+  });
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ebed4bbeed543a4a040f921b65e6b70"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
