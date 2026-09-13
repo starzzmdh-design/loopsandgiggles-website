@@ -85,7 +85,7 @@
 
     <h3 class="fair-month">September</h3>
     <ul class="fair-cal">
-      <li class="fair-card">
+      <li class="fair-card" data-date="2026-09-05">
         <div class="fair-badge">
           <span class="fair-weekday">Saturday</span>
           <span class="fair-day">5</span>
@@ -97,7 +97,7 @@
           <p class="fair-addr">2187 State Route 32<br>Modena, NY 12548</p>
         </div>
       </li>
-      <li class="fair-card">
+      <li class="fair-card" data-date="2026-09-06">
         <div class="fair-badge">
           <span class="fair-weekday">Sunday</span>
           <span class="fair-day">6</span>
@@ -108,7 +108,7 @@
           <p class="fair-addr">428 Route 216<br>Stormville, NY 12582</p>
         </div>
       </li>
-      <li class="fair-card">
+      <li class="fair-card" data-date="2026-09-12">
         <div class="fair-badge">
           <span class="fair-weekday">Saturday</span>
           <span class="fair-day">12</span>
@@ -120,7 +120,7 @@
           <p class="fair-addr">305 Main Street<br>Poughkeepsie, NY 12601</p>
         </div>
       </li>
-      <li class="fair-card">
+      <li class="fair-card" data-date="2026-09-19">
         <div class="fair-badge">
           <span class="fair-weekday">Saturday</span>
           <span class="fair-day">19</span>
@@ -135,7 +135,7 @@
 
     <h3 class="fair-month">October</h3>
     <ul class="fair-cal">
-      <li class="fair-card">
+      <li class="fair-card" data-date="2026-10-10" data-end-date="2026-10-11">
         <div class="fair-badge">
           <span class="fair-weekday">Saturday</span>
           <span class="fair-day">10</span>
@@ -148,7 +148,7 @@
           <p class="fair-note">Rain date: October 11</p>
         </div>
       </li>
-      <li class="fair-card">
+      <li class="fair-card" data-date="2026-10-24">
         <div class="fair-badge">
           <span class="fair-weekday">Saturday</span>
           <span class="fair-day">24</span>
@@ -159,7 +159,7 @@
           <p class="fair-addr">140 S. Grand Ave.<br>Poughkeepsie, NY 12603</p>
         </div>
       </li>
-      <li class="fair-card">
+      <li class="fair-card" data-date="2026-10-25">
         <div class="fair-badge">
           <span class="fair-weekday">Sunday</span>
           <span class="fair-day">25</span>
@@ -174,7 +174,7 @@
 
     <h3 class="fair-month">November</h3>
     <ul class="fair-cal">
-      <li class="fair-card">
+      <li class="fair-card" data-date="2026-11-07">
         <div class="fair-badge">
           <span class="fair-weekday">Saturday</span>
           <span class="fair-day">7</span>
@@ -185,7 +185,7 @@
           <p class="fair-addr">38 Broad St<br>Fishkill, NY 12524</p>
         </div>
       </li>
-      <li class="fair-card">
+      <li class="fair-card" data-date="2026-11-28">
         <div class="fair-badge">
           <span class="fair-weekday">Saturday</span>
           <span class="fair-day">28</span>
@@ -256,6 +256,23 @@
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+(function () {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  document.querySelectorAll('.fair-card[data-date]').forEach(function (card) {
+    const dateStr = card.dataset.endDate || card.dataset.date;
+    const fairDate = new Date(dateStr + 'T00:00:00');
+    if (fairDate < today) {
+      card.classList.add('is-past');
+      const badge = document.createElement('p');
+      badge.className = 'fair-past-badge';
+      badge.textContent = '✓ We were there!';
+      card.querySelector('.fair-info').prepend(badge);
+    }
+  });
+})();
+</script>
 <script>
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
