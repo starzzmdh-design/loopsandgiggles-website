@@ -8,7 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20260925b">
 </head>
 <body>
 
@@ -35,13 +35,42 @@
   <p><a href="#full-gallery" class="new-makes-link">See the full gallery &darr;</a></p>
 </div>
 
+<div class="gallery-filters" id="gallery-filters">
+  <div class="filter-selects">
+    <label class="filter-field">
+      <span class="filter-label">Price</span>
+      <select id="filter-price">
+        <option value="all">All prices</option>
+        <option value="17">$17</option>
+        <option value="30">$30</option>
+        <option value="45">$45 and up</option>
+      </select>
+    </label>
+    <label class="filter-field">
+      <span class="filter-label">Type</span>
+      <select id="filter-type">
+        <option value="all">All types</option>
+        <option value="bunnies-bears">Bunnies &amp; Bears</option>
+        <option value="cats-pups">Cats &amp; Pups</option>
+        <option value="farm">Farm Friends</option>
+        <option value="sea-pond">Sea &amp; Pond</option>
+        <option value="woodland-wild">Woodland &amp; Wild</option>
+        <option value="dinos">Dinos</option>
+        <option value="spooky-sweet">Spooky &amp; Sweet</option>
+        <option value="unique">Unique Finds</option>
+      </select>
+    </label>
+  </div>
+  <p class="filter-empty" id="filter-empty" hidden>No plushies match those filters yet &mdash; try another combination!</p>
+</div>
+
 <section class="featured new-makes-section" id="new-makes">
   <div class="wrap">
     <h2>New this month</h2>
     <p class="new-makes-intro">Fresh off the hook! These'll move down into the full gallery once they've had their debut.</p>
     <div class="gallery-grid">
 
-      <div class="product-card" data-photos="amethyst-dino.jpg,amethyst-dino-2.jpg,amethyst-dino-3.jpg">
+      <div class="product-card" data-type="dinos" data-photos="amethyst-dino.jpg,amethyst-dino-2.jpg,amethyst-dino-3.jpg">
         <span class="badge-new">New!</span>
         <img src="amethyst-dino.jpg" alt="Amethyst Dino plushie">
         <div class="product-info">
@@ -50,7 +79,7 @@
           <a class="btn-buy" href="https://square.link/u/UUVgo78V" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="blueberry-swirl-cone.jpg,blueberry-swirl-cone-2.jpg">
+      <div class="product-card" data-type="spooky-sweet" data-photos="blueberry-swirl-cone.jpg,blueberry-swirl-cone-2.jpg">
         <span class="badge-new">New!</span>
         <img src="blueberry-swirl-cone.jpg" alt="Blueberry Swirl Cone plushie">
         <div class="product-info">
@@ -59,7 +88,7 @@
           <a class="btn-buy" href="https://square.link/u/DjjgYNiT" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="bluspout-whale.jpg,bluspout-whale-2.jpg,bluspout-whale-3.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="bluspout-whale.jpg,bluspout-whale-2.jpg,bluspout-whale-3.jpg">
         <span class="badge-new">New!</span>
         <img src="bluspout-whale.jpg" alt="BluSpout Whale plushie">
         <div class="product-info">
@@ -68,7 +97,7 @@
           <a class="btn-buy" href="https://square.link/u/75ohACoK" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="candyboo-ghost.jpg,candyboo-ghost-2.jpg,candyboo-ghost-3.jpg">
+      <div class="product-card" data-type="spooky-sweet" data-photos="candyboo-ghost.jpg,candyboo-ghost-2.jpg,candyboo-ghost-3.jpg">
         <span class="badge-new">New!</span>
         <img src="candyboo-ghost.jpg" alt="Candyboo plushie">
         <div class="product-info">
@@ -77,7 +106,7 @@
           <a class="btn-buy" href="https://square.link/u/DGgjgOg2" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="chubba-capybarra.jpg,chubba-capybarra-2.jpg,chubba-capybarra-3.jpg">
+      <div class="product-card" data-type="woodland-wild" data-photos="chubba-capybarra.jpg,chubba-capybarra-2.jpg,chubba-capybarra-3.jpg">
         <span class="badge-new">New!</span>
         <img src="chubba-capybarra.jpg" alt="Chubba Capybarra plushie">
         <div class="product-info">
@@ -86,7 +115,7 @@
           <a class="btn-buy" href="https://square.link/u/YIq6BXYJ" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="goldie-puff-cat.jpg,goldie-puff-cat-2.jpg,goldie-puff-cat-3.jpg">
+      <div class="product-card" data-type="cats-pups" data-photos="goldie-puff-cat.jpg,goldie-puff-cat-2.jpg,goldie-puff-cat-3.jpg">
         <span class="badge-new">New!</span>
         <img src="goldie-puff-cat.jpg" alt="Goldie Puff Cat plushie">
         <div class="product-info">
@@ -95,7 +124,7 @@
           <a class="btn-buy" href="https://square.link/u/TgrOqa7W" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="honeybake-hen.jpg,honeybake-hen-2.jpg,honeybake-hen-3.jpg">
+      <div class="product-card" data-type="farm" data-photos="honeybake-hen.jpg,honeybake-hen-2.jpg,honeybake-hen-3.jpg">
         <span class="badge-new">New!</span>
         <img src="honeybake-hen.jpg" alt="Honeybake Hen plushie">
         <div class="product-info">
@@ -104,7 +133,7 @@
           <a class="btn-buy" href="https://square.link/u/uY4G5B5W" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="hoppy-ribbit-frog.jpg,hoppy-ribbit-frog-2.jpg,hoppy-ribbit-frog-3.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="hoppy-ribbit-frog.jpg,hoppy-ribbit-frog-2.jpg,hoppy-ribbit-frog-3.jpg">
         <span class="badge-new">New!</span>
         <img src="hoppy-ribbit-frog.jpg" alt="Hoppy Ribbit Frog plushie">
         <div class="product-info">
@@ -113,7 +142,7 @@
           <a class="btn-buy" href="https://square.link/u/uJpGpjT8" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="lil-butterbean-pig.jpg,lil-butterbean-pig-2.jpg,lil-butterbean-pig-3.jpg">
+      <div class="product-card" data-type="farm" data-photos="lil-butterbean-pig.jpg,lil-butterbean-pig-2.jpg,lil-butterbean-pig-3.jpg">
         <span class="badge-new">New!</span>
         <img src="lil-butterbean-pig.jpg" alt="Lil Butterbean Pig plushie">
         <div class="product-info">
@@ -122,7 +151,7 @@
           <a class="btn-buy" href="https://square.link/u/Xze6rGZy" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="lil-hellaboo-ghost.jpg,lil-hellaboo-ghost-2.jpg,lil-hellaboo-ghost-3.jpg">
+      <div class="product-card" data-type="spooky-sweet" data-photos="lil-hellaboo-ghost.jpg,lil-hellaboo-ghost-2.jpg,lil-hellaboo-ghost-3.jpg">
         <span class="badge-new">New!</span>
         <img src="lil-hellaboo-ghost.jpg" alt="Lil Hellaboo Ghost plushie">
         <div class="product-info">
@@ -131,7 +160,7 @@
           <a class="btn-buy" href="https://square.link/u/2cJJ6fEj" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="lilac-plum-puddlecat.jpg,lilac-plum-puddlecat-2.jpg,lilac-plum-puddlecat-3.jpg">
+      <div class="product-card" data-type="cats-pups" data-photos="lilac-plum-puddlecat.jpg,lilac-plum-puddlecat-2.jpg,lilac-plum-puddlecat-3.jpg">
         <span class="badge-new">New!</span>
         <img src="lilac-plum-puddlecat.jpg" alt="Lil Plum Puddlecat plushie">
         <div class="product-info">
@@ -140,7 +169,7 @@
           <a class="btn-buy" href="https://square.link/u/5lfF1Zw0" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="loaflette-bunny.jpg,loaflette-bunny-2.jpg,loaflette-bunny-3.jpg">
+      <div class="product-card" data-type="bunnies-bears" data-photos="loaflette-bunny.jpg,loaflette-bunny-2.jpg,loaflette-bunny-3.jpg">
         <span class="badge-new">New!</span>
         <img src="loaflette-bunny.jpg" alt="Loaflette Bunny plushie">
         <div class="product-info">
@@ -149,7 +178,7 @@
           <a class="btn-buy" href="https://square.link/u/R4JSHmAX" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="lollitwirl-octo.jpg,lollitwirl-octo-2.jpg,lollitwirl-octo-3.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="lollitwirl-octo.jpg,lollitwirl-octo-2.jpg,lollitwirl-octo-3.jpg">
         <span class="badge-new">New!</span>
         <img src="lollitwirl-octo.jpg" alt="LolliTwirl Octo plushie">
         <div class="product-info">
@@ -158,7 +187,7 @@
           <a class="btn-buy" href="https://square.link/u/2ky1LBbf" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="mini-plume-peacock.jpg,mini-plume-peacock-2.jpg,mini-plume-peacock-3.jpg">
+      <div class="product-card" data-type="woodland-wild" data-photos="mini-plume-peacock.jpg,mini-plume-peacock-2.jpg,mini-plume-peacock-3.jpg">
         <span class="badge-new">New!</span>
         <img src="mini-plume-peacock.jpg" alt="Mini Plume Peacock plushie">
         <div class="product-info">
@@ -167,7 +196,7 @@
           <a class="btn-buy" href="https://square.link/u/gnUq1qBG" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="nutmeg-the-hedgehog.jpg,nutmeg-the-hedgehog-2.jpg,nutmeg-the-hedgehog-3.jpg">
+      <div class="product-card" data-type="woodland-wild" data-photos="nutmeg-the-hedgehog.jpg,nutmeg-the-hedgehog-2.jpg,nutmeg-the-hedgehog-3.jpg">
         <span class="badge-new">New!</span>
         <img src="nutmeg-the-hedgehog.jpg" alt="Nutmeg the Hedgehog plushie">
         <div class="product-info">
@@ -176,7 +205,7 @@
           <a class="btn-buy" href="https://square.link/u/N2k36CnU" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="pink-swizzle-octo.jpg,pink-swizzle-octo-2.jpg,pink-swizzle-octo-3.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="pink-swizzle-octo.jpg,pink-swizzle-octo-2.jpg,pink-swizzle-octo-3.jpg">
         <span class="badge-new">New!</span>
         <img src="pink-swizzle-octo.jpg" alt="Pink Swizzle Octo plushie">
         <div class="product-info">
@@ -185,7 +214,7 @@
           <a class="btn-buy" href="https://square.link/u/4vYvD4ZY" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="stormy-octo.jpg,stormy-octo-2.jpg,stormy-octo-3.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="stormy-octo.jpg,stormy-octo-2.jpg,stormy-octo-3.jpg">
         <span class="badge-new">New!</span>
         <img src="stormy-octo.jpg" alt="Stormy Octo plushie">
         <div class="product-info">
@@ -194,7 +223,7 @@
           <a class="btn-buy" href="https://square.link/u/RTgPWijd" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="toffee-loaf-bunny.jpg,toffee-loaf-bunny-2.jpg,toffee-loaf-bunny-3.jpg">
+      <div class="product-card" data-type="bunnies-bears" data-photos="toffee-loaf-bunny.jpg,toffee-loaf-bunny-2.jpg,toffee-loaf-bunny-3.jpg">
         <span class="badge-new">New!</span>
         <img src="toffee-loaf-bunny.jpg" alt="Toffee Loaf Bunny plushie">
         <div class="product-info">
@@ -203,7 +232,7 @@
           <a class="btn-buy" href="https://square.link/u/xNegrlP7" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="whispy-boo-ghost.jpg,whispy-boo-ghost-2.jpg,whispy-boo-ghost-3.jpg">
+      <div class="product-card" data-type="spooky-sweet" data-photos="whispy-boo-ghost.jpg,whispy-boo-ghost-2.jpg,whispy-boo-ghost-3.jpg">
         <span class="badge-new">New!</span>
         <img src="whispy-boo-ghost.jpg" alt="Whispy Boo Ghost plushie">
         <div class="product-info">
@@ -212,7 +241,7 @@
           <a class="btn-buy" href="https://square.link/u/R2GNDuk6" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="white-loaf-bunny.jpg,white-loaf-bunny-2.jpg,white-loaf-bunny-3.jpg">
+      <div class="product-card" data-type="bunnies-bears" data-photos="white-loaf-bunny.jpg,white-loaf-bunny-2.jpg,white-loaf-bunny-3.jpg">
         <span class="badge-new">New!</span>
         <img src="white-loaf-bunny.jpg" alt="White Loaf Bunny plushie">
         <div class="product-info">
@@ -230,7 +259,7 @@
   <div class="wrap">
     <div class="gallery-grid">
 
-      <div class="product-card">
+      <div class="product-card" data-type="farm">
         <img src="berrybelle-cow.jpg" alt="BerryBelle the Cow plushie">
         <div class="product-info">
           <h3>BerryBelle the Cow</h3>
@@ -238,7 +267,7 @@
           <a class="btn-buy" href="https://square.link/u/v525mPJa" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="blooming-dumpling.jpg,blooming-dumpling-2.jpg,blooming-dumpling-3.jpg,blooming-dumpling-4.jpg">
+      <div class="product-card" data-type="spooky-sweet" data-photos="blooming-dumpling.jpg,blooming-dumpling-2.jpg,blooming-dumpling-3.jpg,blooming-dumpling-4.jpg">
         <img src="blooming-dumpling.jpg" alt="Blooming Dumpling plushie">
         <div class="product-info">
           <h3>Blooming Dumpling</h3>
@@ -246,7 +275,7 @@
           <a class="btn-buy" href="https://square.link/u/Qnz68gqI" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="bluie-dumpling.jpg,bluie-dumpling-2.jpg,bluie-dumpling-3.jpg">
+      <div class="product-card" data-type="spooky-sweet" data-photos="bluie-dumpling.jpg,bluie-dumpling-2.jpg,bluie-dumpling-3.jpg">
         <img src="bluie-dumpling.jpg" alt="Bluie Dumpling plushie">
         <div class="product-info">
           <h3>Bluie Dumpling</h3>
@@ -254,7 +283,7 @@
           <a class="btn-buy" href="https://square.link/u/vmQeEd9L" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="unique">
         <img src="brown-tumble-sprite.jpg" alt="Brown Tumble Sprite plushie">
         <div class="product-info">
           <h3>Brown Tumble Sprite</h3>
@@ -262,7 +291,7 @@
           <a class="btn-buy" href="https://square.link/u/oRVWXssO" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="bumble-bliss-bee.jpg,bumble-bliss-bee-2.jpg,bumble-bliss-bee-3.jpg">
+      <div class="product-card" data-type="woodland-wild" data-photos="bumble-bliss-bee.jpg,bumble-bliss-bee-2.jpg,bumble-bliss-bee-3.jpg">
         <img src="bumble-bliss-bee.jpg" alt="Bumble Bliss the Bee plushie">
         <div class="product-info">
           <h3>Bumble Bliss the Bee</h3>
@@ -270,7 +299,7 @@
           <a class="btn-buy" href="https://square.link/u/X6CtkVAY" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="butterball-belle-cow.jpg,butterball-belle-cow-2.jpg,butterball-belle-cow-3.jpg">
+      <div class="product-card" data-type="farm" data-photos="butterball-belle-cow.jpg,butterball-belle-cow-2.jpg,butterball-belle-cow-3.jpg">
         <img src="butterball-belle-cow.jpg" alt="Butterball Belle the Highland Cow plushie">
         <div class="product-info">
           <h3>Butterball Belle the Highland Cow</h3>
@@ -278,7 +307,7 @@
           <a class="btn-buy" href="https://square.link/u/sCierk94" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="farm">
         <img src="chunkie-green-chick.jpg" alt="Chunkie Green Chick plushie">
         <div class="product-info">
           <h3>Chunkie Green Chick</h3>
@@ -286,7 +315,7 @@
           <a class="btn-buy" href="https://square.link/u/SKPibaCB" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="farm">
         <img src="clover-highland-cow.jpg" alt="Clover the Highland Cow plushie">
         <div class="product-info">
           <h3>Clover the Highland Cow</h3>
@@ -294,7 +323,7 @@
           <a class="btn-buy" href="https://square.link/u/EmgyfLIk" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="cream-teddy-snuggle.jpg,cream-teddy-snuggle-2.jpg,cream-teddy-snuggle-3.jpg">
+      <div class="product-card" data-type="bunnies-bears" data-photos="cream-teddy-snuggle.jpg,cream-teddy-snuggle-2.jpg,cream-teddy-snuggle-3.jpg">
         <img src="cream-teddy-snuggle.jpg" alt="Cream Teddy Snuggle plushie">
         <div class="product-info">
           <h3>Cream Teddy Snuggle</h3>
@@ -302,7 +331,7 @@
           <a class="btn-buy" href="https://square.link/u/0EbmenKa" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="curly-creeper-snake.jpg,curly-creeper-snake-2.jpg,curly-creeper-snake-3.jpg,curly-creeper-snake-4.jpg">
+      <div class="product-card" data-type="woodland-wild" data-photos="curly-creeper-snake.jpg,curly-creeper-snake-2.jpg,curly-creeper-snake-3.jpg,curly-creeper-snake-4.jpg">
         <img src="curly-creeper-snake.jpg" alt="Curly Creeper the Snake plushie">
         <div class="product-info">
           <h3>Curly Creeper the Snake</h3>
@@ -310,7 +339,7 @@
           <a class="btn-buy" href="https://square.link/u/lrNEhrN6" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="farm">
         <img src="dressy-doodle-chick.jpg" alt="Dressy Doodle Chick plushie">
         <div class="product-info">
           <h3>Dressy Doodle Chick</h3>
@@ -318,7 +347,7 @@
           <a class="btn-buy" href="https://square.link/u/EmrjlAH2" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="sea-pond">
         <img src="finn-seal-pup.jpg" alt="Finn the Seal Pup plushie">
         <div class="product-info">
           <h3>Finn the Seal Pup</h3>
@@ -326,7 +355,7 @@
           <a class="btn-buy" href="https://square.link/u/FTx1VGXw" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="farm">
         <img src="gosling-gingersnap.jpg" alt="Gosling Gingersnap plushie">
         <div class="product-info">
           <h3>Gosling Gingersnap</h3>
@@ -334,7 +363,7 @@
           <a class="btn-buy" href="https://square.link/u/3rk6IpjA" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="woodland-wild">
         <img src="grady-caterpillar.jpg" alt="Grady the Crawler Caterpillar plushie">
         <div class="product-info">
           <h3>Grady the Crawler Caterpillar</h3>
@@ -342,7 +371,7 @@
           <a class="btn-buy" href="https://square.link/u/ucOWzDeO" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="green-dino-puff.jpg,green-dino-puff-2.jpg,green-dino-puff-3.jpg,green-dino-puff-4.jpg">
+      <div class="product-card" data-type="dinos" data-photos="green-dino-puff.jpg,green-dino-puff-2.jpg,green-dino-puff-3.jpg,green-dino-puff-4.jpg">
         <img src="green-dino-puff.jpg" alt="Green Dino Puff plushie">
         <div class="product-info">
           <h3>Green Dino Puff</h3>
@@ -350,7 +379,7 @@
           <a class="btn-buy" href="https://square.link/u/6DrFqxm6" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="honeycoil-cobra.jpg,honeycoil-cobra-2.jpg">
+      <div class="product-card" data-type="woodland-wild" data-photos="honeycoil-cobra.jpg,honeycoil-cobra-2.jpg">
         <img src="honeycoil-cobra.jpg" alt="Honeycoil the Cobra plushie">
         <div class="product-info">
           <h3>Honeycoil the Cobra</h3>
@@ -358,7 +387,7 @@
           <a class="btn-buy" href="https://square.link/u/nFKrTbEk" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="bunnies-bears">
         <img src="honeyhug-bunny.jpg" alt="Honeyhug Bunny plushie">
         <div class="product-info">
           <h3>Honeyhug Bunny</h3>
@@ -366,7 +395,7 @@
           <a class="btn-buy" href="https://square.link/u/v28AcPH3" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="woodland-wild">
         <img src="hugo-elephant.jpg" alt="Hugo the Elephant plushie">
         <div class="product-info">
           <h3>Hugo the Elephant</h3>
@@ -374,7 +403,7 @@
           <a class="btn-buy" href="https://square.link/u/6Rsnnmpd" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="sea-pond">
         <img src="jumbo-octo-splash.jpg" alt="Jumbo Octo Splash plushie">
         <div class="product-info">
           <h3>Jumbo Octo Splash</h3>
@@ -382,7 +411,7 @@
           <a class="btn-buy" href="https://square.link/u/nsEh8eDI" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="lady-tuskette-elephant.jpg,lady-tuskette-elephant-2.jpg,lady-tuskette-elephant-3.jpg">
+      <div class="product-card" data-type="woodland-wild" data-photos="lady-tuskette-elephant.jpg,lady-tuskette-elephant-2.jpg,lady-tuskette-elephant-3.jpg">
         <img src="lady-tuskette-elephant.jpg" alt="Lady Tuskette the Elephant plushie">
         <div class="product-info">
           <h3>Lady Tuskette the Elephant</h3>
@@ -390,7 +419,7 @@
           <a class="btn-buy" href="https://square.link/u/6ywjaN4c" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="lou-lazy-mallard.jpg,lou-lazy-mallard-2.jpg">
+      <div class="product-card" data-type="farm" data-photos="lou-lazy-mallard.jpg,lou-lazy-mallard-2.jpg">
         <img src="lou-lazy-mallard.jpg" alt="Lou the Lazy Mallard plushie">
         <div class="product-info">
           <h3>Lou the Lazy Mallard</h3>
@@ -398,7 +427,7 @@
           <a class="btn-buy" href="https://square.link/u/8Jc1w3uj" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="lovey-sitting-snuggler.jpg,lovey-sitting-snuggler-2.jpg">
+      <div class="product-card" data-type="unique" data-photos="lovey-sitting-snuggler.jpg,lovey-sitting-snuggler-2.jpg">
         <img src="lovey-sitting-snuggler.jpg" alt="Lovey the Sitting Snuggler plushie">
         <div class="product-info">
           <h3>Lovey the Sitting Snuggler</h3>
@@ -406,7 +435,7 @@
           <a class="btn-buy" href="https://square.link/u/Owa2UUVU" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="woodland-wild">
         <img src="maple-mallowfox.jpg" alt="Maple Mallowfox plushie">
         <div class="product-info">
           <h3>Maple Mallowfox</h3>
@@ -414,7 +443,7 @@
           <a class="btn-buy" href="https://square.link/u/Ub6ibv5C" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="woodland-wild">
         <img src="marley-sloth.jpg" alt="Marley the Sloth plushie">
         <div class="product-info">
           <h3>Marley the Sloth</h3>
@@ -422,7 +451,7 @@
           <a class="btn-buy" href="https://square.link/u/xMSPKUjL" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="mimi-skirted-bear.jpg,mimi-skirted-bear-2.jpg">
+      <div class="product-card" data-type="bunnies-bears" data-photos="mimi-skirted-bear.jpg,mimi-skirted-bear-2.jpg">
         <img src="mimi-skirted-bear.jpg" alt="Mimi the Skirted Bear plushie">
         <div class="product-info">
           <h3>Mimi the Skirted Bear</h3>
@@ -430,7 +459,7 @@
           <a class="btn-buy" href="https://square.link/u/HvThwn4S" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="minimyst-turtle.jpg,minimyst-turtle-2.jpg,minimyst-turtle-3.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="minimyst-turtle.jpg,minimyst-turtle-2.jpg,minimyst-turtle-3.jpg">
         <img src="minimyst-turtle.jpg" alt="MiniMyst Turtle plushie">
         <div class="product-info">
           <h3>MiniMyst Turtle</h3>
@@ -438,7 +467,7 @@
           <a class="btn-buy" href="https://square.link/u/9eNKjYYD" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="minty-marsh-axolotl.jpg,minty-marsh-axolotl-2.jpg,minty-marsh-axolotl-3.jpg,minty-marsh-axolotl-4.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="minty-marsh-axolotl.jpg,minty-marsh-axolotl-2.jpg,minty-marsh-axolotl-3.jpg,minty-marsh-axolotl-4.jpg">
         <img src="minty-marsh-axolotl.jpg" alt="Minty Marsh Axolotl plushie">
         <div class="product-info">
           <h3>Minty Marsh Axolotl</h3>
@@ -446,7 +475,7 @@
           <a class="btn-buy" href="https://square.link/u/EqBJ6TC3" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="cats-pups">
         <img src="mocha-puppy.jpg" alt="Mocha Puppy plushie">
         <div class="product-info">
           <h3>Mocha Puppy</h3>
@@ -454,7 +483,7 @@
           <a class="btn-buy" href="https://square.link/u/qCnPgQAM" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="pearlie-puff-clam.jpg,pearlie-puff-clam-2.jpg,pearlie-puff-clam-3.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="pearlie-puff-clam.jpg,pearlie-puff-clam-2.jpg,pearlie-puff-clam-3.jpg">
         <img src="pearlie-puff-clam.jpg" alt="Pearlie Puff the Clam plushie">
         <div class="product-info">
           <h3>Pearlie Puff the Clam</h3>
@@ -462,7 +491,7 @@
           <a class="btn-buy" href="https://square.link/u/PVhJ5zFR" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="pebble-pond-frog.jpg,pebble-pond-frog-2.jpg,pebble-pond-frog-3.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="pebble-pond-frog.jpg,pebble-pond-frog-2.jpg,pebble-pond-frog-3.jpg">
         <img src="pebble-pond-frog.jpg" alt="Pebble Pond Frog plushie">
         <div class="product-info">
           <h3>Pebble Pond Frog</h3>
@@ -470,7 +499,7 @@
           <a class="btn-buy" href="https://square.link/u/mQvu7j7o" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="dinos">
         <img src="pebble-pop-triceratop.jpg" alt="Pebble Pop Triceratop plushie">
         <div class="product-info">
           <h3>Pebble Pop Triceratop</h3>
@@ -478,7 +507,7 @@
           <a class="btn-buy" href="https://square.link/u/VwovEgZf" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="spooky-sweet">
         <img src="pink-panther-bag-wrap.jpg" alt="Pink Panther Bag Wrap plushie">
         <div class="product-info">
           <h3>Pink Panther Bag Wrap</h3>
@@ -486,7 +515,7 @@
           <a class="btn-buy" href="https://square.link/u/KrpU3mBu" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="sea-pond">
         <img src="pippa-puff-penguin.jpg" alt="Pippa Puff Penguin plushie">
         <div class="product-info">
           <h3>Pippa Puff Penguin</h3>
@@ -494,7 +523,7 @@
           <a class="btn-buy" href="https://square.link/u/2xgJ7hGI" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="cats-pups">
         <img src="plum-puddlecat.jpg" alt="Plum Puddlecat plushie">
         <div class="product-info">
           <h3>Plum Puddlecat</h3>
@@ -502,7 +531,7 @@
           <a class="btn-buy" href="https://square.link/u/YVOLcHGC" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="farm">
         <img src="prairie-puff-horse.jpg" alt="Prairie Puff Horse plushie">
         <div class="product-info">
           <h3>Prairie Puff Horse</h3>
@@ -510,7 +539,7 @@
           <a class="btn-buy" href="https://square.link/u/nWnMfhhg" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="spooky-sweet">
         <img src="pucker-up-pillow.jpg" alt="Pucker Up Pillow (Lips) plushie">
         <div class="product-info">
           <h3>Pucker Up Pillow (Lips)</h3>
@@ -518,7 +547,7 @@
           <a class="btn-buy" href="https://square.link/u/yAQTxdJY" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="pudgy-mallord.jpg,pudgy-mallord-2.jpg">
+      <div class="product-card" data-type="farm" data-photos="pudgy-mallord.jpg,pudgy-mallord-2.jpg">
         <img src="pudgy-mallord.jpg" alt="Pudgy Mallord plushie">
         <div class="product-info">
           <h3>Pudgy Mallord</h3>
@@ -526,7 +555,7 @@
           <a class="btn-buy" href="https://square.link/u/DdCcDg7J" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="bunnies-bears">
         <img src="rosie-ribbon-bunny.jpg" alt="Rosie Ribbon the Bunny plushie">
         <div class="product-info">
           <h3>Rosie Ribbon the Bunny</h3>
@@ -534,7 +563,7 @@
           <a class="btn-buy" href="https://square.link/u/9ho9Q0FC" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="sea-pond">
         <img src="rosie-ripple-axolotl.jpg" alt="Rosie Ripple the Axolotl plushie">
         <div class="product-info">
           <h3>Rosie Ripple the Axolotl</h3>
@@ -542,7 +571,7 @@
           <a class="btn-buy" href="https://square.link/u/2sEXLZfl" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="rusty-paws-fox.jpg,rusty-paws-fox-2.jpg,rusty-paws-fox-3.jpg">
+      <div class="product-card" data-type="woodland-wild" data-photos="rusty-paws-fox.jpg,rusty-paws-fox-2.jpg,rusty-paws-fox-3.jpg">
         <img src="rusty-paws-fox.jpg" alt="Rusty Paws the Red Fox plushie">
         <div class="product-info">
           <h3>Rusty Paws the Red Fox</h3>
@@ -550,7 +579,7 @@
           <a class="btn-buy" href="https://square.link/u/VLewvJV1" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="sleepy-snuggle-owl.jpg,sleepy-snuggle-owl-2.jpg">
+      <div class="product-card" data-type="woodland-wild" data-photos="sleepy-snuggle-owl.jpg,sleepy-snuggle-owl-2.jpg">
         <img src="sleepy-snuggle-owl.jpg" alt="Sleepy Snuggle Owl plushie">
         <div class="product-info">
           <h3>Sleepy Snuggle Owl</h3>
@@ -558,7 +587,7 @@
           <a class="btn-buy" href="https://square.link/u/rtyhFFGA" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="sea-pond">
         <img src="snugglesplash-otter.jpg" alt="SnuggleSplash Otter plushie">
         <div class="product-info">
           <h3>SnuggleSplash Otter</h3>
@@ -566,7 +595,7 @@
           <a class="btn-buy" href="https://square.link/u/dR5tplWh" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="dinos">
         <img src="sproutosaurus-dino.jpg" alt="Sproutosaurus the Dino plushie">
         <div class="product-info">
           <h3>Sproutosaurus the Dino</h3>
@@ -574,7 +603,7 @@
           <a class="btn-buy" href="https://square.link/u/lOXqeP9z" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="woodland-wild">
         <img src="sunny-snugglebee.jpg" alt="Sunny Snugglebee plushie">
         <div class="product-info">
           <h3>Sunny Snugglebee</h3>
@@ -582,7 +611,7 @@
           <a class="btn-buy" href="https://square.link/u/hz3ThvHE" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="sunny-duckling.jpg,sunny-duckling-2.jpg">
+      <div class="product-card" data-type="farm" data-photos="sunny-duckling.jpg,sunny-duckling-2.jpg">
         <img src="sunny-duckling.jpg" alt="Sunny the Duckling plushie">
         <div class="product-info">
           <h3>Sunny the Duckling</h3>
@@ -590,7 +619,7 @@
           <a class="btn-buy" href="https://square.link/u/7O1ZAz9W" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="swirlie-mcslow-turtle.jpg,swirlie-mcslow-turtle-2.jpg,swirlie-mcslow-turtle-3.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="swirlie-mcslow-turtle.jpg,swirlie-mcslow-turtle-2.jpg,swirlie-mcslow-turtle-3.jpg">
         <img src="swirlie-mcslow-turtle.jpg" alt="Swirlie McSlow the Turtle plushie">
         <div class="product-info">
           <h3>Swirlie McSlow the Turtle</h3>
@@ -598,7 +627,7 @@
           <a class="btn-buy" href="https://square.link/u/aOZo2fnK" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="turtle-bloom.jpg,turtle-bloom-2.jpg,turtle-bloom-3.jpg,turtle-bloom-4.jpg">
+      <div class="product-card" data-type="sea-pond" data-photos="turtle-bloom.jpg,turtle-bloom-2.jpg,turtle-bloom-3.jpg,turtle-bloom-4.jpg">
         <img src="turtle-bloom.jpg" alt="Turtle Bloom plushie">
         <div class="product-info">
           <h3>Turtle Bloom</h3>
@@ -606,7 +635,7 @@
           <a class="btn-buy" href="https://square.link/u/cPZS1J3i" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card" data-photos="wade-the-monster.jpg,wade-the-monster-2.jpg,wade-the-monster-3.jpg,wade-the-monster-4.jpg,wade-the-monster-5.jpg">
+      <div class="product-card" data-type="spooky-sweet" data-photos="wade-the-monster.jpg,wade-the-monster-2.jpg,wade-the-monster-3.jpg,wade-the-monster-4.jpg,wade-the-monster-5.jpg">
         <img src="wade-the-monster.jpg" alt="Wade the Monster plushie">
         <div class="product-info">
           <h3>Wade the Monster</h3>
@@ -614,7 +643,7 @@
           <a class="btn-buy" href="https://square.link/u/oE3DFn3J" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-type="sea-pond">
         <img src="wally-wobbletusk.jpg" alt="Wally Wobbletusk plushie">
         <div class="product-info">
           <h3>Wally Wobbletusk</h3>
@@ -689,6 +718,50 @@
     if (e.key === 'ArrowLeft') prevBtn.click();
     if (e.key === 'ArrowRight') nextBtn.click();
   });
+})();
+</script>
+<script>
+(function () {
+  const empty = document.getElementById('filter-empty');
+  const cards = document.querySelectorAll('.product-card');
+  const sections = [document.getElementById('new-makes'), document.getElementById('full-gallery')];
+  const current = { price: 'all', type: 'all' };
+
+  function priceOf(card) {
+    const p = card.querySelector('.product-price');
+    return p ? parseInt(p.textContent.replace(/[^0-9]/g, ''), 10) : 0;
+  }
+
+  function matchesPrice(card) {
+    if (current.price === 'all') return true;
+    const price = priceOf(card);
+    if (current.price === '45') return price >= 45;
+    return price === parseInt(current.price, 10);
+  }
+
+  function apply() {
+    let shown = 0;
+    cards.forEach(function (card) {
+      const ok = matchesPrice(card) && (current.type === 'all' || card.dataset.type === current.type);
+      card.hidden = !ok;
+      if (ok) shown++;
+    });
+    sections.forEach(function (sec) {
+      if (sec) sec.hidden = !sec.querySelector('.product-card:not([hidden])');
+    });
+    empty.hidden = shown > 0;
+  }
+
+  const priceSel = document.getElementById('filter-price');
+  const typeSel = document.getElementById('filter-type');
+  function update() {
+    current.price = priceSel.value;
+    current.type = typeSel.value;
+    apply();
+  }
+  priceSel.addEventListener('change', update);
+  typeSel.addEventListener('change', update);
+  update();
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ebed4bbeed543a4a040f921b65e6b70"}'></script><!-- End Cloudflare Web Analytics -->
